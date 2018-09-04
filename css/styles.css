@@ -1,3 +1,6 @@
+#login h1 {
+	text-align: center;
+}
 #login .input-email {
 	display: table;
 	margin: 0 auto;
