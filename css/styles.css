@@ -1,3 +1,9 @@
+#login {
+	position: relative;
+}
+#login .login-fields {
+	top: 50%;
+}
 #login h1 {
 	text-align: center;
 }
