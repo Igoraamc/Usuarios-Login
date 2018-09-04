@@ -2,7 +2,7 @@
 	position: relative;
 }
 #login .login-fields {
-	top: 50%;
+	margin-top: 150px;
 }
 #login h1 {
 	text-align: center;
