@@ -14,7 +14,9 @@ h1.title {
 #login button.btn {
 	width: 160px;
 }
-
 .error {
 	border: 1px solid red !important;
+}
+#users_list #users_table tbody tr {
+	cursor: pointer;
 }
