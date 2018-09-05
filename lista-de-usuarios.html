@@ -67,6 +67,7 @@
 		services.listaDeUsuarios(page, callback);
 
 		$('#users_list .page_selector a').on('click', function() {
+			console.log('Clicou');
 			let page_atual = $(this).parent().find('a.selected').attr('data-id');
 			page = $(this).attr('data-id');
 

@@ -31,6 +31,7 @@ h1.title {
     display: block;
     border-radius: 50%;
     float: left;
+    cursor: pointer;
 }
 #users_list .page_selector a.selected {
 	background-color: black;
