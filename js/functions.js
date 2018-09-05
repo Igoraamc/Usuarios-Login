@@ -4,9 +4,7 @@ let verificarLogin = function() {
 	if(expires) {
 		let atualD = new Date();
 		let expiresD = new Date(expires);
-		let min = expiresD.getMinutes() + 20;
-
-		expiresD.setMinutes(min);
+		
 		if(atualD > expiresD) {
 			localStorage.removeItem('token');
 			localStorage.removeItem('expires');
