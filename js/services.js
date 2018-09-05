@@ -10,7 +10,7 @@ var services = {
 		"url": "",
 		"type": "GET"
 	},
-	logar : function(obejct, callback) {
+	logar : function(object, callback) {
 		services.settings.url = "https://reqres.in/api/login";
 		services.settings.data = object;
 
