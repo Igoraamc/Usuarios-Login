@@ -30,6 +30,7 @@ h1.title {
     background-color: #dadada;
     display: block;
     border-radius: 50%;
+    float: left;
 }
 #users_list .page_selector a.selected {
 	background-color: black;
