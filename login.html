@@ -71,7 +71,7 @@
 			}
 		}
 		let validaLogin = function() {
-			if(validaEmail && validaSenha) {
+			if(validaEmail() && validaSenha()) {
 				return true;
 			}else {
 				return false;
@@ -88,7 +88,7 @@
 			localStorage.setItem('expires', d.toUTCString());
 		}
 		$('button.btn').on('click', function() {
-			if(validaLogin) {
+			if(validaLogin()) {
 				let email = $('#email').val();
 				let senha = $('#senha').val();
 				let object = {
