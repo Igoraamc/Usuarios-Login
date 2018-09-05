@@ -45,7 +45,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		let callbackLogin = function(response) {
+		let callback = function(response) {
 			let token = response.token;
 
 			let d = new Date();
@@ -65,8 +65,10 @@
 					"password": senha
 				}
 
-				services.logar(object, callbackLogin);
-				window.location.href = "lista-de-usuarios.html";
+				services.logar(object, callback);
+				setTimeout(function() {
+					window.location.href = "lista-de-usuarios.html";
+				}, 100);
 			}
 		});
 	</script>
