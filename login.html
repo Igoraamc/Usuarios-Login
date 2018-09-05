@@ -47,28 +47,34 @@
 		let validaEmail = function() {
 			let email = $('#email').val();
 			let valid_email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g;
+			let valid;
 
 			if(!valid_email.test(email)) {
 				$('#email').addClass('error');
-				return false;
+				valid = false;
 			}else if(email == "") {
 				$('#email').addClass('error');
-				return false;
+				valid = false;
 			}else {
 				$('#email').removeClass('error');
-				return true;
+				valid = true;
 			}
+
+			return valid;
 		}
 		let validaSenha = function() {
 			let senha = $('#senha').val();
+			let valid;
 
 			if(senha == "") {
 				$('#senha').addClass('error');
-				return false;
+				valid = false;
 			}else {
 				$('#senha').removeClass('error');
-				return true;
+				valid = true;
 			}
+
+			return valid;
 		}
 		let validaLogin = function() {
 			let valid;
