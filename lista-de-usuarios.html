@@ -50,11 +50,11 @@
 			let data = response;
 			$('#users_list #users_table tbody').empty();
 
-			for (var i = 0; i < data.data.length; i++) {
+			for (let i = 0; i < data.data.length; i++) {
 				$('#users_list #users_table tbody').append('<tr id='+data.data[i].id+'><th scope="row">'+data.data[i].id+'</th><td>'+data.data[i].first_name+'</td><td>'+data.data[i].last_name+'</td><tr><');
 			}
 
-			for (var i = 0; i < data.total_pages; i++) {
+			for (let i = 0; i < data.total_pages; i++) {
 				if(i == 1) {
 					$('#users_list .page_selector').append('<a data-id='+(i+1)+' class="selected mr-1"></a>');
 				}else {
@@ -65,6 +65,15 @@
 		let page = 1;
 
 		services.listaDeUsuarios(page, callback);
+
+		$('#users_list .page_selector a').on('click', function() {
+			let page_atual = $(this).parent().find('a.selected').attr('data-id');
+			page = $(this).attr('data-id');
+
+			if(page_atual != page) {
+				services.listaDeUsuarios(page, callback);
+			}
+		})
 	</script>
 </body>
 </html>
