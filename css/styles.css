@@ -20,18 +20,18 @@ h1.title {
 #users_list #users_table tbody tr {
 	cursor: pointer;
 }
-#users_list #users_table .page_selector {
+#users_list .page_selector {
 	display: table;
 	margin: 0 auto;
 }
-#users_list #users_table .page_selector a{
+#users_list .page_selector a{
 	height: 18px;
     width: 18px;
     background-color: #dadada;
     display: block;
     border-radius: 50%;
 }
-#users_list #users_table .page_selector a.selected {
+#users_list .page_selector a.selected {
 	background-color: black;
 }
 
