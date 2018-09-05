@@ -63,13 +63,3 @@ let validaLogin = function() {
 
 	return valid;
 }
-let callbackLogin = function(response) {
-	let token = response.token;
-
-	let d = new Date();
-	let min = d.getMinutes() + 20;
-	d.setMinutes(min);
-
-	localStorage.setItem('token', token);
-	localStorage.setItem('expires', d.toUTCString());
-}
