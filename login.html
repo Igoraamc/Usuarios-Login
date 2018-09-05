@@ -44,19 +44,19 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		/*let validaEmail = function() {
+		let validaEmail = function() {
 			let email = $('#email').val();
 			let valid_email = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi;
 
-			if(!valid_email.test(email)) {
-				$('#email').addClass('error');
-				return false;
+			if(valid_email.test(email)) {
+				$('#email').removeClass('error');
+				return true;
 			}else if(email == "") {
 				$('#email').addClass('error');
 				return false;
 			}else {
-				$('#email').removeClass('error');
-				return true;
+				$('#email').addClass('error');
+				return false;
 			}
 		}
 		let validaSenha = function() {
@@ -79,7 +79,7 @@
 			}
 
 			return valid;
-		}*/
+		}
 		let callback = function(response) {
 			let token = response.token;
 
