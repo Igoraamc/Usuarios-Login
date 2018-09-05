@@ -71,11 +71,14 @@
 			}
 		}
 		let validaLogin = function() {
+			let valid;
 			if(validaEmail() && validaSenha()) {
-				return true;
-			}else {
-				return false;
+				valid = true;
+			}else{
+				valid = false;
 			}
+
+			return valid;
 		}
 		let callback = function(response) {
 			let token = response.token;
