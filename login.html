@@ -52,12 +52,16 @@
 			if(email == "") {
 				$('#email').addClass('error');
 				valid = false;
-			}else if(!valid_email.test(email)) {
-				$('#email').addClass('error');
-				valid = false;
 			}else {
 				$('#email').removeClass('error');
 				valid = true;
+			}
+
+			let emailValido = valid_email.test(email);
+
+			if(!emailValido) {
+				$('#email').addClass('error');
+				valid = false;
 			}
 
 			return valid;
