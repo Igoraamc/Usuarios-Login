@@ -36,5 +36,8 @@ h1.title {
 #users_list .page_selector div.selected {
 	background-color: black;
 }
-
-
+#users_list .page_selector img {
+	float: left;
+    height: 18px;
+    width: 18px;
+}

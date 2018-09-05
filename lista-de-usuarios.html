@@ -47,6 +47,9 @@
 	</div>
 	<script type="text/javascript">
 		let first_time = true;
+		let page = 1;
+		let total_pages;
+
 		let callback = function(response) {
 			let data = response;
 			$('#users_list #users_table tbody').empty();
@@ -56,7 +59,7 @@
 			}
 
 			if(first_time) {
-				$('#users_list .page_selector').append('<span class="oi oi-caret-left"></span>');
+				$('#users_list .page_selector').append('<img src="css/open-iconic/svg/caret-left.svg" data-id="1">');
 				for (let i = 0; i < data.total_pages; i++) {
 					if(i == 0) {
 						$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="selected mr-1"></div>');
@@ -64,11 +67,12 @@
 						$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="mr-1"></div>');
 					}
 				}
-				$('#users_list .page_selector').append('<span class="oi oi-caret-right"></span>');
+				$('#users_list .page_selector').append('<img src="css/open-iconic/svg/caret-right.svg" data-id="2">');
+				total_pages = data.total_pages;
 				first_time = false;
 			}
 		}
-		let page = 1;
+		
 
 		services.listaDeUsuarios(page, callback);
 
@@ -90,7 +94,48 @@
 					}
 				});
 			}
-		})
+		});
+
+		$(document).on('click', '#users_list .page_selector img', function() {
+			let elImg = $(this);
+			let page_atual = elImg.parent().find('div.selected').attr('data-id');
+
+			if(elImg.attr('data-id') == 1) {
+				if(page != 1) {
+					page--;
+
+					services.listaDeUsuarios(page, callback);
+
+					$('#users_list .page_selector div').each(function() {
+						let el = $(this);
+						let removed_class = false;
+						if(el.attr('data-id') == page_atual) {
+							el.removeClass('selected');
+						}
+						if(el.attr('data-id') == page) {
+							el.addClass('selected');
+						}
+					});
+				}
+			}else if(elImg.attr('data-id') == 2){
+				if(page != total_pages) {
+					page++;
+
+					services.listaDeUsuarios(page, callback);
+
+					$('#users_list .page_selector div').each(function() {
+						let el = $(this);
+						let removed_class = false;
+						if(el.attr('data-id') == page_atual) {
+							el.removeClass('selected');
+						}
+						if(el.attr('data-id') == page) {
+							el.addClass('selected');
+						}
+					});
+				}
+			}
+		});
 	</script>
 </body>
 </html>
