@@ -45,7 +45,7 @@
 			let data = response;
 
 			for (var i = 0; i < data.data.length; i++) {
-				$('#users_list #users_table tbody').append('<tr><th> scope="row">'+data.data[i].id+'</th><td>'+data.data[i].first_name+'</td><td>'+data.data[i].last_name+'</td><tr>');
+				$('#users_list #users_table tbody').append('<a href="javascript:;"><tr id='+data.data[i].id+'><th scope="row">'+data.data[i].id+'</th><td>'+data.data[i].first_name+'</td><td>'+data.data[i].last_name+'</td><tr></a>');
 			}
 		}
 		let page = 1;
