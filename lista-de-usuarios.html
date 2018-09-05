@@ -46,6 +46,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		let first_time = true;
 		let callback = function(response) {
 			let data = response;
 			$('#users_list #users_table tbody').empty();
@@ -54,12 +55,15 @@
 				$('#users_list #users_table tbody').append('<tr id='+data.data[i].id+'><th scope="row">'+data.data[i].id+'</th><td>'+data.data[i].first_name+'</td><td>'+data.data[i].last_name+'</td><tr><');
 			}
 
-			for (let i = 0; i < data.total_pages; i++) {
-				if(i == 0) {
-					$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="selected mr-1"></div>');
-				}else {
-					$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="mr-1"></div>');
+			if(first_time) {
+				for (let i = 0; i < data.total_pages; i++) {
+					if(i == 0) {
+						$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="selected mr-1"></div>');
+					}else {
+						$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="mr-1"></div>');
+					}
 				}
+				first_time = false;
 			}
 		}
 		let page = 1;
@@ -67,12 +71,14 @@
 		services.listaDeUsuarios(page, callback);
 
 		$(document).on('click', '#users_list .page_selector div', function() {
-			console.log('Clicou');
 			let page_atual = $(this).parent().find('div.selected').attr('data-id');
 			page = $(this).attr('data-id');
 
 			if(page_atual != page) {
 				services.listaDeUsuarios(page, callback);
+				
+				$(this).removeClass('selected');
+				$('#users_list .page_selector div')[page-1].addClass('selected');
 			}
 		})
 	</script>
