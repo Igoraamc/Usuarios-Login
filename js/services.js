@@ -24,5 +24,12 @@ var services = {
 		$.ajax(services.settingsGet).done(function(response) {
 			callback(response);
 		});
+	},
+	pegarUsuario : function(userId, callback) {
+		services.settingsGet.url = "https://reqres.in/api/users/"+userId;
+
+		$.ajax(services.settingsGet).done(function(response) {
+			callback(response);
+		});
 	}
 }

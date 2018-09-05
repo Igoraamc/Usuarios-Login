@@ -166,6 +166,12 @@
 				}
 			}
 		});
+
+		$(document).on('click', '#users_list #users_table tbody tr', function() {
+			let el = $(this);
+
+			window.location.href = 'usuario.html?USER='+el.attr('id');
+		});
 	</script>
 </body>
 </html>
