@@ -91,14 +91,16 @@
 			localStorage.setItem('expires', d.toUTCString());
 		}
 		$('button.btn').on('click', function() {
-			let email = $('#email').val();
-			let senha = $('#senha').val();
-			let object = {
-				"email": email,
-				"password": senha
-			}
+			if(validaLogin()) {
+				let email = $('#email').val();
+				let senha = $('#senha').val();
+				let object = {
+					"email": email,
+					"password": senha
+				}
 
-			services.logar(object, callback);
+				services.logar(object, callback);
+			}
 		});
 	</script>
 </body>
