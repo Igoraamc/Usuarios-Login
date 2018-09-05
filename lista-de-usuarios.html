@@ -68,7 +68,7 @@
 
 		$('#users_list .page_selector div').on('click', function() {
 			console.log('Clicou');
-			let page_atual = $(this).parent().find('a.selected').attr('data-id');
+			let page_atual = $(this).parent().find('div.selected').attr('data-id');
 			page = $(this).attr('data-id');
 
 			if(page_atual != page) {
