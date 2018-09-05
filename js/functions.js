@@ -1,3 +1,22 @@
+let verificarLogin = function() {
+	let expires = localStorage.getItem('expires');
+
+	if(expires) {
+		let atualD = new Date();
+		let expiresD = new Date(expires);
+		let min = expiresD.getMinutes() + 20;
+
+		expiresD.setMinutes(min);
+		if(atualD > expiresD) {
+			localStorage.removeItem('token');
+			localStorage.removeItem('expires');
+
+			window.location.href = 'login.html';
+		}
+	}else {
+		window.location.href = 'login.html';
+	}
+}
 let validaEmail = function() {
 	let email = $('#email').val();
 	let valid_email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g;

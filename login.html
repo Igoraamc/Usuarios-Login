@@ -13,6 +13,9 @@
 	<script type="text/javascript" src="js/services.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 
+	<script type="text/javascript">
+		verificarLogin();
+	</script>
 </head>
 <body>
 	<div id="login">
@@ -20,7 +23,7 @@
 			<div class="row">
 				<div class="col-lg-12 login-fields">
 					<div class="col-lg-12 mb-5 mt-5">
-						<h1>Login</h1>
+						<h1 class="title">Login</h1>
 					</div>
 					<div class="col-lg-12 mb-3">
 						<div class="col-lg-5 input-login">
@@ -57,6 +60,7 @@
 				}
 
 				services.logar(object, callbackLogin);
+				window.location.href = "";
 			}
 		});
 	</script>

@@ -4,7 +4,7 @@
 #login .login-fields {
 	margin-top: 150px;
 }
-#login h1 {
+h1.title {
 	text-align: center;
 }
 #login .input-login {
