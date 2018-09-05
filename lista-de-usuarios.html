@@ -59,7 +59,7 @@
 			}
 
 			if(first_time) {
-				$('#users_list .page_selector').append('<img src="css/open-iconic/svg/caret-left.svg" data-id="1">');
+				$('#users_list .page_selector').append('<img src="css/open-iconic/svg/caret-left.svg" class="mr-2" data-id="1">');
 				for (let i = 0; i < data.total_pages; i++) {
 					if(i == 0) {
 						$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="selected mr-1"></div>');
@@ -67,7 +67,7 @@
 						$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="mr-1"></div>');
 					}
 				}
-				$('#users_list .page_selector').append('<img src="css/open-iconic/svg/caret-right.svg" data-id="2">');
+				$('#users_list .page_selector').append('<img src="css/open-iconic/svg/caret-right.svg" class="ml-1" data-id="2">');
 				total_pages = data.total_pages;
 				first_time = false;
 			}
