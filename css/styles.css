@@ -24,7 +24,7 @@ h1.title {
 	display: table;
 	margin: 0 auto;
 }
-#users_list .page_selector a{
+#users_list .page_selector div{
 	height: 18px;
     width: 18px;
     background-color: #dadada;
@@ -33,7 +33,7 @@ h1.title {
     float: left;
     cursor: pointer;
 }
-#users_list .page_selector a.selected {
+#users_list .page_selector div.selected {
 	background-color: black;
 }
 

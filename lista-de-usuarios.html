@@ -56,9 +56,9 @@
 
 			for (let i = 0; i < data.total_pages; i++) {
 				if(i == 0) {
-					$('#users_list .page_selector').append('<a data-id='+(i+1)+' class="selected mr-1"></a>');
+					$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="selected mr-1"></div>');
 				}else {
-					$('#users_list .page_selector').append('<a data-id='+(i+1)+' class="mr-1"></a>');
+					$('#users_list .page_selector').append('<div data-id='+(i+1)+' class="mr-1"></div>');
 				}
 			}
 		}
@@ -66,7 +66,7 @@
 
 		services.listaDeUsuarios(page, callback);
 
-		$('#users_list .page_selector a').on('click', function() {
+		$('#users_list .page_selector div').on('click', function() {
 			console.log('Clicou');
 			let page_atual = $(this).parent().find('a.selected').attr('data-id');
 			page = $(this).attr('data-id');
