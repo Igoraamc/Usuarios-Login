@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		let validaEmail = function() {
+		/*let validaEmail = function() {
 			let email = $('#email').val();
 			let valid_email = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi;
 
@@ -79,7 +79,7 @@
 			}
 
 			return valid;
-		}
+		}*/
 		let callback = function(response) {
 			let token = response.token;
 
@@ -91,16 +91,14 @@
 			localStorage.setItem('expires', d.toUTCString());
 		}
 		$('button.btn').on('click', function() {
-			if(validaLogin()) {
-				let email = $('#email').val();
-				let senha = $('#senha').val();
-				let object = {
-					"email": email,
-					"password": senha
-				}
-
-				services.logar(object, callback);
+			let email = $('#email').val();
+			let senha = $('#senha').val();
+			let object = {
+				"email": email,
+				"password": senha
 			}
+
+			services.logar(object, callback);
 		});
 	</script>
 </body>
