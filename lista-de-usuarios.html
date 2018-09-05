@@ -75,10 +75,16 @@
 			page = $(this).attr('data-id');
 
 			if(page_atual != page) {
-				services.listaDeUsuarios(page, callback);
-				
 				$(this).removeClass('selected');
-				$('#users_list .page_selector div')[page-1].addClass('selected');
+
+				services.listaDeUsuarios(page, callback);
+
+				$('#users_list .page_selector div').each(function() {
+					let el = $(this);
+					if(el.attr('data-id') == page) {
+						el.addClass('selected');
+					}
+				});
 			}
 		})
 	</script>
