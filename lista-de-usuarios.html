@@ -72,7 +72,6 @@
 				first_time = false;
 			}
 		}
-		
 
 		services.listaDeUsuarios(page, callback);
 
@@ -116,10 +115,41 @@
 							el.addClass('selected');
 						}
 					});
+				}else if(page == 1) {
+					page = total_pages;
+
+					services.listaDeUsuarios(page, callback);
+
+					$('#users_list .page_selector div').each(function() {
+						let el = $(this);
+						let removed_class = false;
+						if(el.attr('data-id') == page_atual) {
+							el.removeClass('selected');
+						}
+						if(el.attr('data-id') == page) {
+							el.addClass('selected');
+						}
+					});
 				}
+
 			}else if(elImg.attr('data-id') == 2){
 				if(page != total_pages) {
 					page++;
+
+					services.listaDeUsuarios(page, callback);
+
+					$('#users_list .page_selector div').each(function() {
+						let el = $(this);
+						let removed_class = false;
+						if(el.attr('data-id') == page_atual) {
+							el.removeClass('selected');
+						}
+						if(el.attr('data-id') == page) {
+							el.addClass('selected');
+						}
+					});
+				}else if(page == total_pages) {
+					page = 1;
 
 					services.listaDeUsuarios(page, callback);
 
