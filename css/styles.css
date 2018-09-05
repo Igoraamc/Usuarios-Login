@@ -14,3 +14,7 @@
 #login button.btn {
 	width: 160px;
 }
+
+.error {
+	border: 1px solid red !important;
+}

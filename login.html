@@ -44,24 +44,60 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		var callback = function(response) {
-			var token = response.token;
+		let validaEmail = function() {
+			let email = $('#email').val();
+			let valid_email = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
 
-			var d = new Date();
-			var min = d.getMinutes() + 20;
+			if(!valid_email.test(email)) {
+				$('#email').addClass('error');
+				return false;
+			}else if(email == "") {
+				$('#email').addClass('error');
+				return false;
+			}else {
+				$('#email').removeClass('error');
+				return true;
+			}
+		}
+		let validaSenha = function() {
+			let senha = $('#senha').val();
+
+			if(senha == "") {
+				$('#senha').addClass('error');
+				return false;
+			}else {
+				$('#senha').removeClass('error');
+				return true;
+			}
+		}
+		let validaLogin = function() {
+			if(validaEmail && validaSenha) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		let callback = function(response) {
+			let token = response.token;
+
+			let d = new Date();
+			let min = d.getMinutes() + 20;
 			d.setMinutes(min);
 
-			document.cookie = "token="+token+";expires="+d.toUTCString()+";path=/";
+			localStorage.setItem('token', token);
+			localStorage.setItem('expires', d.toUTCString());
 		}
 		$('button.btn').on('click', function() {
-			var email = $('#email').val();
-			var senha = $('#senha').val();
-			var object = {
-				"email": email,
-				"password": senha
-			}
+			if(validaLogin) {
+				let email = $('#email').val();
+				let senha = $('#senha').val();
+				let object = {
+					"email": email,
+					"password": senha
+				}
 
-			services.logar(object, callback);
+				services.logar(object, callback);
+			}
 		});
 	</script>
 </body>
