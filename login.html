@@ -49,10 +49,10 @@
 			let valid_email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g;
 			let valid;
 
-			if(!valid_email.test(email)) {
+			if(email == "") {
 				$('#email').addClass('error');
 				valid = false;
-			}else if(email == "") {
+			}else if(!valid_email.test(email)) {
 				$('#email').addClass('error');
 				valid = false;
 			}else {
