@@ -72,6 +72,18 @@
 				first_time = false;
 			}
 		}
+		let updateTable = function(page_atual) {
+			$('#users_list .page_selector div').each(function() {
+				let el = $(this);
+				let removed_class = false;
+				if(el.attr('data-id') == page_atual) {
+					el.removeClass('selected');
+				}
+				if(el.attr('data-id') == page) {
+					el.addClass('selected');
+				}
+			});
+		}
 
 		services.listaDeUsuarios(page, callback);
 
@@ -82,16 +94,7 @@
 			if(page_atual != page) {
 				services.listaDeUsuarios(page, callback);
 
-				$('#users_list .page_selector div').each(function() {
-					let el = $(this);
-					let removed_class = false;
-					if(el.attr('data-id') == page_atual) {
-						el.removeClass('selected');
-					}
-					if(el.attr('data-id') == page) {
-						el.addClass('selected');
-					}
-				});
+				updateTable(page_atual);
 			}
 		});
 
@@ -105,31 +108,13 @@
 
 					services.listaDeUsuarios(page, callback);
 
-					$('#users_list .page_selector div').each(function() {
-						let el = $(this);
-						let removed_class = false;
-						if(el.attr('data-id') == page_atual) {
-							el.removeClass('selected');
-						}
-						if(el.attr('data-id') == page) {
-							el.addClass('selected');
-						}
-					});
+					updateTable(page_atual);
 				}else if(page == 1) {
 					page = total_pages;
 
 					services.listaDeUsuarios(page, callback);
 
-					$('#users_list .page_selector div').each(function() {
-						let el = $(this);
-						let removed_class = false;
-						if(el.attr('data-id') == page_atual) {
-							el.removeClass('selected');
-						}
-						if(el.attr('data-id') == page) {
-							el.addClass('selected');
-						}
-					});
+					updateTable(page_atual);
 				}
 
 			}else if(elImg.attr('data-id') == 2){
@@ -138,31 +123,13 @@
 
 					services.listaDeUsuarios(page, callback);
 
-					$('#users_list .page_selector div').each(function() {
-						let el = $(this);
-						let removed_class = false;
-						if(el.attr('data-id') == page_atual) {
-							el.removeClass('selected');
-						}
-						if(el.attr('data-id') == page) {
-							el.addClass('selected');
-						}
-					});
+					updateTable(page_atual);
 				}else if(page == total_pages) {
 					page = 1;
 
 					services.listaDeUsuarios(page, callback);
 
-					$('#users_list .page_selector div').each(function() {
-						let el = $(this);
-						let removed_class = false;
-						if(el.attr('data-id') == page_atual) {
-							el.removeClass('selected');
-						}
-						if(el.attr('data-id') == page) {
-							el.addClass('selected');
-						}
-					});
+					updateTable(page_atual);
 				}
 			}
 		});
