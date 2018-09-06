@@ -41,8 +41,8 @@
 	let callback = function(response) {
 		let data = response;
 
-		$('#usuario .user-img').append('<img src='+data.avatar+'>');
-		$('#usuario .user-name').append('<p>'+data.last_name+', '+data.first_name+'</p>');
+		$('#usuario .user-img').append('<img src='+data.data.avatar+'>');
+		$('#usuario .user-name').append('<p>'+data.data.last_name+', '+data.data.first_name+'</p>');
 	}
 
 	services.pegarUsuario(param, callback);
