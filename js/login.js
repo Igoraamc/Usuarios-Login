@@ -67,10 +67,14 @@ let getAllUsers = function() {
 	let page = 1;
 	let takeTotalPages = function(response) {
 		let data = response;
+		console.log(data);
+
 		total_pages = data.total_pages;
 	}
 	let addToArray = function(response) {
 		let data = response;
+
+		console.log(data);
 
 		for (var i = 0; i < data.data.length; i++) {
 			users_array.push(data.data[i]);
