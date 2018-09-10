@@ -66,6 +66,7 @@ let getAllUsers = function() {
 	let total_pages;
 	let addToArray = function(response) {
 		let data = response;
+		console.log(data);
 
 		for (var i = 0; i < data.data.length; i++) {
 			users_array.push(data.data[i]);
