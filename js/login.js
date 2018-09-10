@@ -64,16 +64,24 @@ let validaLogin = function() {
 let getAllUsers = function() {
 	let users_array;
 	let total_pages;
+	let page = 1;
+	let callback = function(response) {
+		let data = response;
+		total_pages = data.total_pages;
+	}
 	let addToArray = function(response) {
 		let data = response;
-		console.log(data);
 
 		for (var i = 0; i < data.data.length; i++) {
 			users_array.push(data.data[i]);
 		}
 	}
 
-	services.listaDeUsuarios(addToArray);
+	services.listaDeUsuarios(page, callback);
+
+	for (var i = 1; i <= total_pages; i++) {
+		services.listaDeUsuarios(i, addToArray);
+	}
 
 	return users_array;
 }
