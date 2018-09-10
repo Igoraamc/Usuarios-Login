@@ -46,7 +46,9 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		let first_time = true;
+		let array = getAllUsers();
+		console.log(array);
+		/*let first_time = true;
 		let page = 1;
 		let total_pages;
 
@@ -86,6 +88,7 @@
 		}
 
 		services.listaDeUsuarios(page, callback);
+
 
 		$(document).on('click', '#users_list .page_selector div', function() {
 			let page_atual = $(this).parent().find('div.selected').attr('data-id');
@@ -138,7 +141,7 @@
 			let el = $(this);
 
 			window.location.href = 'usuario.html?USER='+el.attr('id');
-		});
+		});*/
 	</script>
 </body>
 </html>

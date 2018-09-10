@@ -61,3 +61,18 @@ let validaLogin = function() {
 
 	return valid;
 }
+let getAllUsers = function() {
+	let users_array;
+	let total_pages;
+	let addToArray = function(response) {
+		let data = response;
+
+		for (var i = 0; i < data.data.length; i++) {
+			users_array.push(data.data[i]);
+		}
+	}
+
+	services.listaDeUsuarios(addToArray);
+
+	return users_array;
+}

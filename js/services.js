@@ -18,8 +18,8 @@ var services = {
 			callback(response);
 		});
 	},
-	listaDeUsuarios : function(page, callback) {
-		services.settingsGet.url = "https://reqres.in/api/users?page="+page;
+	listaDeUsuarios : function(callback) {
+		services.settingsGet.url = "https://reqres.in/api/users";
 
 		$.ajax(services.settingsGet).done(function(response) {
 			callback(response);
