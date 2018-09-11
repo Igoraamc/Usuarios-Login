@@ -105,12 +105,11 @@ let ordenarArrayPorNumero = function(array) {
 	let arraySorted = array;
 
 	for (var i = 0; i < arraySorted.length; i++) {
-		for (var j = 0; j < arraySorted.length; j++) {
-			if(array[i] > array[j]) {
-				console.log('entrou')
-				temp = arraySorted[i];
-				arraySorted[i] = arraySorted[j];
-				arraySorted[j] = temp;
+		for (var k = 0; k < arraySorted.length; k++) {
+			if(arraySorted[k] > arraySorted[k+1]) {
+				temp = arraySorted[k+1];
+				arraySorted[k+1] = arraySorted[k];
+				arraySorted[k] = temp;
 				console.log(arraySorted);
 			}
 		}
