@@ -76,6 +76,7 @@ let getAllUsers = function() {
 
 		for (var i = 0; i < data.data.length; i++) {
 			user = data.data[i];
+			user.id = String(user.id);
 			users_array.push(user);
 		}
 	}
@@ -88,10 +89,6 @@ let getAllUsers = function() {
 
 	for (var i = 0; i < 4; i++) {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
-	}
-
-	for (var i = 0; i < users_array.length; i++) {
-		users_array[i].id = String(users_array[i].id);
 	}
 
 	return users_array;
