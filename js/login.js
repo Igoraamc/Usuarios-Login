@@ -109,11 +109,9 @@ let ordenarArrayPorNumero = function(array) {
 			if(array[i] > array[j]) {
 				console.log('entrou')
 				temp = arraySorted[i];
-				console.log(temp);
 				arraySorted[i] = arraySorted[j];
-				console.log(arraySorted[i]);
 				arraySorted[j] = temp;
-				console.log(arraySorted[j]);
+				console.log(arraySorted);
 			}
 		}
 	}
