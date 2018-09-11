@@ -100,20 +100,12 @@ let logout = function() {
 
 	window.location.href = "login.html";
 }
-let ordenarArrayPorNumero = function(array) {
-	let temp;
-	let arraySorted = array;
+let turnIntIntoString = function(array) {
+	let new_array = array;
 
-	for (var i = 0; i < arraySorted.length; i++) {
-		for (var k = 0; k < arraySorted.length; k++) {
-			if(arraySorted[k].id > arraySorted[k+1].id) {
-				temp = arraySorted[k+1];
-				arraySorted[k+1] = arraySorted[k];
-				arraySorted[k] = temp;
-				console.log(arraySorted);
-			}
-		}
-	}
+	new_array.each(function(i){
+		new_array[i].id = String(new_array[i].id);
+	});
 
-	return arraySorted;
+	return new_array;
 }
