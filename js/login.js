@@ -72,12 +72,14 @@ let getAllUsers = function() {
 	}*/
 	let addUsersToArray = function(response) {
 		let data = response;
+		let user;
 
 		console.log(data);
 
 		for (var i = 0; i < data.data.length; i++) {
 			console.log(data.data[i]);
-			users_array.push(data.data[i]);
+			user = data.data[i];
+			users_array.push(user);
 		}
 	}
 
