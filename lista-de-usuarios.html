@@ -48,7 +48,10 @@
 	<script type="text/javascript">
 		let array = getAllUsers();
 		let arraySorted = array.sort(function(a, b) {
-			return a.id - b.id;
+			let aId = a.id;
+			let bId = b.id;
+			console.log(aId + "and" + bId);
+			return aId - bId;
 		});
 		console.log(arraySorted);
 		/*let first_time = true;
