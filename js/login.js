@@ -103,7 +103,7 @@ let logout = function() {
 let turnIntIntoString = function(array) {
 	let new_array = array;
 
-	new_array.each(function(i){
+	$.each(new_array, function(i, v){
 		new_array[i].id = String(new_array[i].id);
 	});
 
