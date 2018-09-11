@@ -86,7 +86,14 @@ let getAllUsers = function() {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
 
-	return users_array;
+	let users_sorted = users_array.sort(function(a, b) {
+		let aId = a.id;
+		let bId = b.id;
+		console.log(aId + "and" + bId);
+		return aId - bId;
+	});
+
+	return users_sorted;
 }
 let logout = function() {
 	localStorage.removeItem('token');
