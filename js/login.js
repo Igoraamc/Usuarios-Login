@@ -90,7 +90,9 @@ let getAllUsers = function() {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
 
-	let users_sorted = users_array.sort(sortArray);
+	for (var i = 0; i < users_sorted.length; i++) {
+		users_sorted[i].id = String(users_sorted[i].id);
+	}
 
 	return users_sorted;
 }
@@ -99,11 +101,4 @@ let logout = function() {
 	localStorage.removeItem('expires');
 
 	window.location.href = "login.html";
-}
-let turnIntIntoString = function(array) {
-	for (var i = 0; i < array.length; i++) {
-		array[i].id = array(new_array[i].id);
-	}
-
-	return array;
 }
