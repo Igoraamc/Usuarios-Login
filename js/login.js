@@ -79,6 +79,10 @@ let getAllUsers = function() {
 			users_array.push(user);
 		}
 	}
+	let sortArray = function(a, b) {
+		console.log(a.id + " and " + b.id);
+		return a.id-b.id;
+	}
 
 	//services.listaDeUsuarios(page, takeTotalPages);
 
@@ -86,12 +90,7 @@ let getAllUsers = function() {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
 
-	let users_sorted = users_array.sort(function(a, b) {
-		let aId = a.id;
-		let bId = b.id;
-		console.log(aId + "and" + bId);
-		return aId - bId;
-	});
+	let users_sorted = users_array.sort(sortArray);
 
 	return users_sorted;
 }
