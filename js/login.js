@@ -67,9 +67,9 @@ let getAllUsers = function() {
 	let page = 1;
 	let takeTotalPages = function(response) {
 		let data = response;
-		console.log(data);
 
 		total_pages = data.total_pages;
+		console.log(total_pages);
 	}
 	let addToArray = function(response) {
 		let data = response;
@@ -83,8 +83,8 @@ let getAllUsers = function() {
 
 	services.listaDeUsuarios(page, takeTotalPages);
 
-	for (var i = 1; i <= total_pages; i++) {
-		services.listaDeUsuarios(i, addToArray);
+	for (var i = 0; i < total_pages; i++) {
+		services.listaDeUsuarios((i + 1), addToArray);
 	}
 
 	return users_array;
