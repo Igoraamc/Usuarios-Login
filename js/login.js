@@ -107,9 +107,13 @@ let ordenarArrayPorNumero = function(array) {
 	for (var i = 0; i < arraySorted.length; i++) {
 		for (var j = 0; j < arraySorted.length; j++) {
 			if(array[i] > array[j]) {
+				console.log('entrou')
 				temp = arraySorted[i];
+				consoe.log(temp);
 				arraySorted[i] = arraySorted[j];
+				console.log(arraySorted[i]);
 				arraySorted[j] = temp;
+				console.log(arraySorted[j]);
 			}
 		}
 	}
