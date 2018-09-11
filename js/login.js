@@ -90,3 +90,9 @@ let getAllUsers = function() {
 
 	return users_array;
 }
+let logout = function() {
+	localStorage.removeItem('token');
+	localStorage.removeItem('expires');
+
+	window.location.href = "login.html";
+}
