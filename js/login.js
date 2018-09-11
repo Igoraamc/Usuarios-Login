@@ -79,6 +79,7 @@ let getAllUsers = function() {
 		for (var i = 0; i < data.data.length; i++) {
 			console.log(data.data[i]);
 			user = JSON.stringify(data.data[i]);
+			console.log(user);
 			users_array.push(user+";");
 		}
 	}
