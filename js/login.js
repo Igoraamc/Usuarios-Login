@@ -72,7 +72,7 @@ let getAllUsers = function() {
 	}*/
 	let addUsersToArray = function(response) {
 		let data = response;
-		let user;
+		let user = [];
 
 		console.log(data);
 
