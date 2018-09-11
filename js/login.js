@@ -76,6 +76,7 @@ let getAllUsers = function() {
 		console.log(data);
 
 		for (var i = 0; i < data.data.length; i++) {
+			console.log(data.data[i]);
 			users_array.push(data.data[i]);
 		}
 	}
