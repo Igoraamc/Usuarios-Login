@@ -100,3 +100,19 @@ let logout = function() {
 
 	window.location.href = "login.html";
 }
+let ordenarArrayPorNumero = function(array) {
+	let temp;
+	let arraySorted = array;
+
+	for (var i = 0; i < arraySorted.length; i++) {
+		for (var j = 0; j < arraySorted.length; j++) {
+			if(array[i] > array[j]) {
+				temp = arraySorted[i];
+				arraySorted[i] = arraySorted[j];
+				arraySorted[j] = temp;
+			}
+		}
+	}
+
+	return arraySorted;
+}
