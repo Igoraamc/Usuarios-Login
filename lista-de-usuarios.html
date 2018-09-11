@@ -47,9 +47,12 @@
 	</div>
 	<script type="text/javascript">
 		let array = getAllUsers();
+		let sortedArray = ordenarArrayPorNumero(array);
 		let table = $('#users_list .page_selector');
 		$.data(table, "option", array);
-		console.log($.data(table, "option"));
+
+		console.log(sortedArray);
+
 		/*let first_time = true;
 		let page = 1;
 		let total_pages;
