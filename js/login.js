@@ -106,7 +106,7 @@ let ordenarArrayPorNumero = function(array) {
 
 	for (var i = 0; i < arraySorted.length; i++) {
 		for (var k = 0; k < arraySorted.length; k++) {
-			if(arraySorted[k] > arraySorted[k+1]) {
+			if(arraySorted[k].id > arraySorted[k+1].id) {
 				temp = arraySorted[k+1];
 				arraySorted[k+1] = arraySorted[k];
 				arraySorted[k] = temp;
