@@ -63,14 +63,14 @@ let validaLogin = function() {
 }
 let getAllUsers = function() {
 	let users_array;
-	let total_pages;
+	/*let total_pages;
 	let page = 1;
 	let takeTotalPages = function(response) {
 		let data = response;
 
 		total_pages = data.total_pages;
-	}
-	let addToArray = function(response) {
+	}*/
+	let addUsersToArray = function(response) {
 		let data = response;
 
 		console.log(data);
@@ -81,14 +81,10 @@ let getAllUsers = function() {
 		}
 	}
 
-	console.log('Ta aqui');
+	//services.listaDeUsuarios(page, takeTotalPages);
 
-	services.listaDeUsuarios(page, takeTotalPages);
-
-	console.log('Passou aqui');
-
-	for (var i = 0; i < total_pages; i++) {
-		services.listaDeUsuarios((i + 1), addToArray);
+	for (var i = 0; i < 4; i++) {
+		services.listaDeUsuarios((i + 1), addUsersToArray);
 		console.log('Entrou '+i);
 	}
 
