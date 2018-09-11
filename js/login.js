@@ -81,7 +81,11 @@ let getAllUsers = function() {
 		}
 	}
 
+	console.log('Ta aqui');
+
 	services.listaDeUsuarios(page, takeTotalPages);
+
+	console.log('Passou aqui');
 
 	for (var i = 0; i < total_pages; i++) {
 		services.listaDeUsuarios((i + 1), addToArray);
