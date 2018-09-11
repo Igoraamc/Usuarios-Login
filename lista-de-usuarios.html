@@ -47,7 +47,8 @@
 	</div>
 	<script type="text/javascript">
 		let array = getAllUsers();
-		console.log(array);
+		let array_sort = array.sort(function(a,b){return b.id-a.id});
+		console.log(array_sort);
 
 		/*let first_time = true;
 		let page = 1;
