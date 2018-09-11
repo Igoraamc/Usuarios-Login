@@ -90,11 +90,11 @@ let getAllUsers = function() {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
 
-	for (var i = 0; i < users_sorted.length; i++) {
-		users_sorted[i].id = String(users_sorted[i].id);
+	for (var i = 0; i < users_array.length; i++) {
+		users_array[i].id = String(users_array[i].id);
 	}
 
-	return users_sorted;
+	return users_array;
 }
 let logout = function() {
 	localStorage.removeItem('token');
