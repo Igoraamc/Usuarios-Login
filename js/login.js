@@ -88,5 +88,9 @@ let getAllUsers = function() {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
 
+	users_array.sort(function(a, b) {
+		return a.id-b.id;
+	});
+
 	return users_array;
 }
