@@ -49,7 +49,7 @@
 		let array = getAllUsers();
 		let table = $('#users_list .page_selector');
 		$.data(table, "option", array);
-		console.log($.data(table, "option"));
+		console.log($.data(table, "option").sort(function(a,b){return a.id-b.id}));
 		/*let first_time = true;
 		let page = 1;
 		let total_pages;
