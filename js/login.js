@@ -62,7 +62,7 @@ let validaLogin = function() {
 	return valid;
 }
 let getAllUsers = function() {
-	let users_array;
+	let users_array = [];
 	/*let total_pages;
 	let page = 1;
 	let takeTotalPages = function(response) {
@@ -72,14 +72,13 @@ let getAllUsers = function() {
 	}*/
 	let addUsersToArray = function(response) {
 		let data = response;
-		let user = [];
+		let user;
 
 		console.log(data);
 
 		for (var i = 0; i < data.data.length; i++) {
 			console.log(data.data[i]);
-			user = JSON.stringify(data.data[i]);
-			user = JSON.stringify(user);
+			user = data.data[i];
 			console.log(user);
 			users_array.push(user+";");
 		}
