@@ -81,7 +81,7 @@ let getAllUsers = function() {
 	}
 	let sortArray = function(a, b) {
 		console.log(a.id + " and " + b.id);
-		return a.id-b.id;
+		return (a.id-b.id);
 	}
 
 	//services.listaDeUsuarios(page, takeTotalPages);
