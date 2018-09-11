@@ -103,9 +103,9 @@ let logout = function() {
 let turnIntIntoString = function(array) {
 	let new_array = array;
 
-	$.each(new_array, function(i, v){
+	for (var i = 0; i < new_array.length; i++) {
 		new_array[i].id = String(new_array[i].id);
-	});
+	}
 
 	return new_array;
 }
