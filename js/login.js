@@ -69,7 +69,6 @@ let getAllUsers = function() {
 		let data = response;
 
 		total_pages = data.total_pages;
-		console.log(total_pages);
 	}
 	let addToArray = function(response) {
 		let data = response;
@@ -85,6 +84,7 @@ let getAllUsers = function() {
 
 	for (var i = 0; i < total_pages; i++) {
 		services.listaDeUsuarios((i + 1), addToArray);
+		console.log('Entrou '+i);
 	}
 
 	return users_array;
