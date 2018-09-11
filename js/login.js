@@ -78,8 +78,8 @@ let getAllUsers = function() {
 
 		for (var i = 0; i < data.data.length; i++) {
 			console.log(data.data[i]);
-			user = data.data[i];
-			users_array.push(user);
+			user = JSON.stringify(data.data[i]);
+			users_array.push(user+";");
 		}
 	}
 
