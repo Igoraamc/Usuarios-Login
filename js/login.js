@@ -63,13 +63,6 @@ let validaLogin = function() {
 }
 let getAllUsers = function() {
 	let users_array = [];
-	/*let total_pages;
-	let page = 1;
-	let takeTotalPages = function(response) {
-		let data = response;
-
-		total_pages = data.total_pages;
-	}*/
 	let addUsersToArray = function(response) {
 		let data = response;
 		let user;
@@ -81,15 +74,14 @@ let getAllUsers = function() {
 		}
 	}
 	let sortArray = function(a, b) {
-		console.log(a.id + " and " + b.id);
-		return (a.id-b.id);
+		return a.id-b.id;
 	}
-
-	//services.listaDeUsuarios(page, takeTotalPages);
 
 	for (var i = 0; i < 4; i++) {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
+
+	users_array.sort(sortArray);
 
 	return users_array;
 }
