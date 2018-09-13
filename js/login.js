@@ -80,7 +80,7 @@ let getAllUsers = function() {
 	for (var i = 0; i < 4; i++) {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
-
+	debugger;
 	users_array.sort(sortArray);
 
 	return users_array;
