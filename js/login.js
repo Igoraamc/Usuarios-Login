@@ -72,6 +72,9 @@ let getAllUsers = function() {
 			user.id = String(user.id);
 			users_array.push(user);
 		}
+
+		users_array.sort(sortArray);
+		localStorage.setItem('users', JSON.stringify(users_array));
 	}
 	let sortArray = function(a, b) {
 		return a.id-b.id;
@@ -80,10 +83,6 @@ let getAllUsers = function() {
 	for (var i = 0; i < 4; i++) {
 		services.listaDeUsuarios((i + 1), addUsersToArray);
 	}
-	debugger;
-	users_array.sort(sortArray);
-
-	return users_array;
 }
 let logout = function() {
 	localStorage.removeItem('token');

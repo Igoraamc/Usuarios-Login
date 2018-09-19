@@ -17,6 +17,11 @@ h1.title {
 .error {
 	border: 1px solid red !important;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 #users_list #users_table tbody tr {
 	cursor: pointer;
 }
@@ -41,6 +46,9 @@ h1.title {
     height: 18px;
     width: 18px;
     cursor: pointer;
+}
+#users_list .col-lg-12:nth-child(2) {
+	margin-bottom: 30px;
 }
 #usuario .user-info .user-img img{
 	display: table;
